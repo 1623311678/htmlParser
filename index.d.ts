@@ -1,3 +1,9 @@
+interface outputJson {
+    children?: outputJson[];
+    text?: string;
+    nodeName?: string;
+    style?: string;
+}
 declare class htmlParser {
     private json;
     private styleObj;
@@ -5,6 +11,6 @@ declare class htmlParser {
     constructor(htmlstring: string);
     private getChildrenJson;
     private parserHtml;
-    getHtmlJson(): any;
+    getHtmlJson(): outputJson[];
 }
 export default htmlParser;

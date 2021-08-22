@@ -35,9 +35,11 @@ function getStyleStr(htmlStr) {
     var endStyleIndex = htmlStr.indexOf("</style>");
     if (startStyleIndex !== -1 && endStyleIndex !== -1) {
         styleStr = htmlStr.slice(startStyleIndex + 7, endStyleIndex);
-        styleStr = styleStr.replace(/\n/g, "")
+        styleStr = styleStr
+            .replace(/\n/g, "")
             .replace(/' '/g, "")
-            .replace(/\./g, "");
+            .replace(/\./g, "")
+            .replace(/\s+/g, "");
     }
     return styleStr;
 }

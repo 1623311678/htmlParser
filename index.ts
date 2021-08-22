@@ -1,12 +1,18 @@
 import { getFormatHtmlString, getTagStyleString, getTextValue } from "./Util";
+interface outputJson{
+    children?:outputJson[]
+    text?:string
+    nodeName?:string
+    style?:string
+}
 class htmlParser {
-  private json:any = [];
+  private json:outputJson[] = [];
   private styleObj = {};
   private originHtmlString: string = '';
   constructor(htmlstring: string) {
     this.originHtmlString = htmlstring;
   }
-  private getChildrenJson(contentChildren:any, target:any) {
+  private getChildrenJson(contentChildren:any[], target:outputJson[]) {
     if (contentChildren && contentChildren.length > 0) {
       for (let i = 0; i < contentChildren.length; i += 1) {
         target[i] = {};
@@ -26,13 +32,13 @@ class htmlParser {
           contentChildren[i]["children"].length > 0
         ) {
           target[i]["children"] = [];
-          const children = target[i]["children"];
+          const children:any = target[i]["children"];
           this.getChildrenJson(contentChildren[i]["children"], children);
         }
       }
     }
   }
-  private parserHtml(docObj:any, target:any) {
+  private parserHtml(docObj:any, target:outputJson[]) {
     //将body解析成json，dom，style
     const contentChildren = docObj.children;
     this.getChildrenJson(contentChildren, target);

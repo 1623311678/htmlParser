@@ -1,3 +1,6 @@
+interface styleObj{
+    [key:string]:any
+}
 export function getFormatHtmlString(htmlStr: string, obj: any) {
   //只取body里的内容。去除<br>
   let styleObj = obj;
@@ -19,7 +22,7 @@ export function getFormatHtmlString(htmlStr: string, obj: any) {
   const bodyDomObject = doc.children[0].children[1];
   return bodyDomObject;
 }
-function getClassStyleObj(styleStr: string, styleObj: any) {
+function getClassStyleObj(styleStr: string, styleObj: styleObj) {
   const startIndex = styleStr.indexOf("{");
   const endIndex = styleStr.indexOf("}");
   styleObj[styleStr.slice(0, startIndex)] = styleStr.slice(
@@ -45,7 +48,7 @@ function getStyleStr(htmlStr: string) {
   }
   return styleStr;
 }
-export function getTagStyleString(children: any, styleObj: any) {
+export function getTagStyleString(children: any, styleObj: styleObj) {
   const classList = children.classList; //先获取classlist里的样式
   let str = null;
   for (let j = 0; j < classList.length; j += 1) {
