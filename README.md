@@ -80,9 +80,8 @@ const htmlstring =`
 </html>
 `
 const parser = new htmlParser(htmlstring)
- const parser = new htmlParser(html)
- const json = parser.getHtmlJson()
- console.log('json',json)
+const json = parser.getHtmlJson()
+console.log('json',json)
 ```
 ### 3 结果：
 
@@ -185,9 +184,8 @@ const htmlstring =`
 </html>
 `
 const parser = new htmlParser(htmlstring)
- const parser = new htmlParser(html)
- const json = parser.getHtmlJson()
- console.log('json',json)
+const json = parser.getHtmlJson()
+console.log('json',json)
 ```
 ### 3 result:
 
