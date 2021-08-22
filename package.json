@@ -1,0 +1,33 @@
+{
+  "name": "htmlParser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "release": "tsc && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1623311678/htmlParser.git"
+  },
+  "keywords": [
+    "htmlParser",
+    "parserHtml",
+    "html to json",
+    "parser html to json"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1623311678/htmlParser/issues"
+  },
+  "homepage": "https://github.com/1623311678/htmlParser#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.3.5"
+  }
+}
