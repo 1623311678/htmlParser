@@ -95,7 +95,8 @@ style：该标签对应的样式
 text：该标签对应的文本
 其中的\n可自行处理
 
-![200080e307320355ca82565eac58cdd](https://user-images.githubusercontent.com/41052302/130354531-7e61ba07-9795-42b7-ab76-a9151d56576d.png)
+![image](https://user-images.githubusercontent.com/41052302/130356561-42ad78ba-80b1-4eaa-b31d-8dd83dff3f1c.png)
+
 
 ## <span id="english-version"> If you don’t speak Chinese please start from here。</span>
 (This project did not introduce any third-party libs, developed based on web api DOMParser(), and built using typescript)
@@ -201,7 +202,8 @@ text: the text corresponding to the label
 Among them, \n can be handled by yourself
 
 
-![200080e307320355ca82565eac58cdd](https://user-images.githubusercontent.com/41052302/130354531-7e61ba07-9795-42b7-ab76-a9151d56576d.png)
+![image](https://user-images.githubusercontent.com/41052302/130356566-f44a2cbf-27b3-4a20-8028-c9ea107d6f7e.png)
+
 
 
 
