@@ -1,6 +1,6 @@
 {
-  "name": "parserHtml",
-  "version": "1.0.0",
+  "name": "html-parser-client",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "types": "dist/index.d.ts",
