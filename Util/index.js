@@ -15,7 +15,7 @@ function getFormatHtmlString(htmlStr, obj) {
         htmlStirng = htmlStr.slice(startBodyIndex + 6, endBodyIndex);
     }
     var parser = new DOMParser();
-    var doc = parser.parseFromString(htmlStirng.replace(/<br>/g, ""), "text/html");
+    var doc = parser.parseFromString(htmlStirng.replace(/<br\s*[\/]?>/gi, ""), "text/html");
     var bodyDomObject = doc.children[0].children[1];
     return bodyDomObject;
 }

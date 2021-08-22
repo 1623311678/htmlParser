@@ -16,7 +16,7 @@ export function getFormatHtmlString(htmlStr: string, obj: any) {
   }
   const parser = new DOMParser();
   const doc = parser.parseFromString(
-    htmlStirng.replace(/<br>/g, ""),
+    htmlStirng.replace(/<br\s*[\/]?>/gi, ""),
     "text/html"
   );
   const bodyDomObject = doc.children[0].children[1];
