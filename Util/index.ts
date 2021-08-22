@@ -1,4 +1,4 @@
-export function getFormatHtmlString(htmlStr:string, obj:any) {
+export function getFormatHtmlString(htmlStr: string, obj: any) {
   //只取body里的内容。去除<br>
   let styleObj = obj;
   const styleStr = getStyleStr(htmlStr);
@@ -19,7 +19,7 @@ export function getFormatHtmlString(htmlStr:string, obj:any) {
   const bodyDomObject = doc.children[0].children[1];
   return bodyDomObject;
 }
-function getClassStyleObj(styleStr:string, styleObj:any) {
+function getClassStyleObj(styleStr: string, styleObj: any) {
   const startIndex = styleStr.indexOf("{");
   const endIndex = styleStr.indexOf("}");
   styleObj[styleStr.slice(0, startIndex)] = styleStr.slice(
@@ -31,60 +31,62 @@ function getClassStyleObj(styleStr:string, styleObj:any) {
     getClassStyleObj(restStr, styleObj);
   }
 }
-function getStyleStr(htmlStr:string) {
+function getStyleStr(htmlStr: string) {
   let styleStr = null;
   const startStyleIndex = htmlStr.indexOf("<style>");
   const endStyleIndex = htmlStr.indexOf("</style>");
   if (startStyleIndex !== -1 && endStyleIndex !== -1) {
-    styleStr = htmlStr.slice(startStyleIndex + 7, endStyleIndex)
-    styleStr=styleStr.replace(/\n/g, "")
+    styleStr = htmlStr.slice(startStyleIndex + 7, endStyleIndex);
+    styleStr = styleStr
+      .replace(/\n/g, "")
       .replace(/' '/g, "")
-      .replace(/\./g, "");
+      .replace(/\./g, "")
+      .replace(/\s+/g, "");
   }
   return styleStr;
 }
-export function getTagStyleString(children:any,styleObj:any) {
-    const classList = children.classList; //先获取classlist里的样式
-    let str = null;
-    for (let j = 0; j < classList.length; j += 1) {
-      const className = classList[j];
-      if (!str) {
-        str = "";
-      }
-      str += styleObj[className];
+export function getTagStyleString(children: any, styleObj: any) {
+  const classList = children.classList; //先获取classlist里的样式
+  let str = null;
+  for (let j = 0; j < classList.length; j += 1) {
+    const className = classList[j];
+    if (!str) {
+      str = "";
     }
-    if (
-      children.attributes &&
-      children.attributes[1] &&
-      children.attributes[1].nodeValue
-    ) {
-      if (!str) {
-        str = "";
-      }
-      str += children.attributes[1].nodeValue;
-    }
-    if (str && str.indexOf(";") === -1) {
-      str += ";";
-    }
-    return str;
+    str += styleObj[className];
   }
-export function getTextValue(children:any) {
-    let text = null;
-    if (children.firstChild && children.firstChild.nodeValue) {
-      if (!text) {
-        text = "";
-      }
-      text += children.firstChild.nodeValue;
+  if (
+    children.attributes &&
+    children.attributes[1] &&
+    children.attributes[1].nodeValue
+  ) {
+    if (!str) {
+      str = "";
     }
-    if (
-      children.lastChild &&
-      children.lastChild.nodeValue &&
-      children.lastChild.nodeValue !== text
-    ) {
-      if (!text) {
-        text = "";
-      }
-      text += children.lastChild.nodeValue;
-    }
-    return text;
+    str += children.attributes[1].nodeValue;
   }
+  if (str && str.indexOf(";") === -1) {
+    str += ";";
+  }
+  return str;
+}
+export function getTextValue(children: any) {
+  let text = null;
+  if (children.firstChild && children.firstChild.nodeValue) {
+    if (!text) {
+      text = "";
+    }
+    text += children.firstChild.nodeValue;
+  }
+  if (
+    children.lastChild &&
+    children.lastChild.nodeValue &&
+    children.lastChild.nodeValue !== text
+  ) {
+    if (!text) {
+      text = "";
+    }
+    text += children.lastChild.nodeValue;
+  }
+  return text;
+}
