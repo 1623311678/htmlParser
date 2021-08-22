@@ -4,7 +4,8 @@
 （本项目未引入任何第三方libs，基于web api DOMParser()开发，使用typescript构建）
 [new DOMParser()](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMParser/DOMParser)
 
-支持es5，es next，typescript 运行环境
+支持es5，es next，typescript 运行环境,
+## 注意：由于DOMParser的限制，目前仅支持浏览器环境，不支持纯node环境
 
 ### 1 安装：npm i html-parser-client
 
@@ -104,6 +105,7 @@ text：该标签对应的文本
 [new DOMParser()](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMParser/DOMParser)
 
 Support es5, es next, typescript operating environment
+## Note: Due to the limitation of DOMParser, only browser environment is currently supported, not pure node environment
 
 ### 1 install：
 
