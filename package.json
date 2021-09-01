@@ -1,6 +1,6 @@
 {
   "name": "html-parser-client",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "one lib for html parser client which can parser html to json ",
   "main": "index.js",
   "types": "dist/index.d.ts",
@@ -22,7 +22,7 @@
     "parser-html-to-json"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/1623311678/htmlParser/issues"
   },
