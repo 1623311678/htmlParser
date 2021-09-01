@@ -16,7 +16,10 @@
     "htmlParser",
     "parserHtml",
     "html to json",
-    "parser html to json"
+    "parser html to json",
+    "html parser",
+    "html-parser",
+    "parser-html-to-json"
   ],
   "author": "",
   "license": "ISC",
